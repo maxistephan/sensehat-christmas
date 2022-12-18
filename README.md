@@ -59,8 +59,9 @@ sudo apt install ./python3-christmaspi_<VERSION>_all.deb
 sudo apt install ./python-christmaspi-doc_<VERSION>_all.deb
 ```
 
-After Installation, run `systemctl start christmaspi` to start.
-Otherwise, the sense hat starts up at system boot.
+Packages can be obtained at the
+[Releases Page](https://github.com/maxistephan/sensehat-christmas/releases/new) or build
+them from source as described above.
 
 ### Pip installation
 
