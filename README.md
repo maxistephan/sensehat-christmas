@@ -31,8 +31,8 @@ Use the *run.sh* script to build the package.
 
 This will output two *.deb* files:
 
-* *python3-christmaspi.deb* - christmaspi Package
-* *python-christmaspi-doc.deb* - Documentation Package
+* *python3-christmaspi_<VERSION>_all.deb* - christmaspi Package
+* *python-christmaspi-doc_<VERSION>_all.deb* - Documentation Package
 
 **Alternative:** [Docker](https://docs.docker.com/engine/install/debian/)
 
@@ -53,11 +53,14 @@ Installing the packages is then done by using `apt install <PACKAGE>`:
 
 ```bash
 # Install the package
-sudo apt install ./python3-christmaspi.deb
+sudo apt install ./python3-christmaspi_<VERSION>_all.deb
 
 # OPTIONAL: Install docs
-sudo apt install ./python-christmaspi-doc.deb
+sudo apt install ./python-christmaspi-doc_<VERSION>_all.deb
 ```
+
+After Installation, run `systemctl start christmaspi` to start.
+Otherwise, the sense hat starts up at system boot.
 
 ### Pip installation
 
