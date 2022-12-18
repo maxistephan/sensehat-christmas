@@ -29,5 +29,5 @@ setup(
     version=_version,
     description="RPI Sense Hat Display of a Christmas Tree with Snowflakes",
     install_requires=install_requires,
-    entry_points={"console_scripts": ["sensehat-christmas = sensehat-christmas.bin.christmas:main"]},
+    entry_points={"console_scripts": ["sensehat-christmas = sensehat_christmas.bin.christmas:main"]},
 )
