@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE=1
+
+export PYBUILD_NAME=sensehat-christmas
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_installinit:
+	dh_installinit --name=sensehat-christmas
+
+override_dh_installsystemd:
+	dh_installsystemd --name=sensehat-christmas

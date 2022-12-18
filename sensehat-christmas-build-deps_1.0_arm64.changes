@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Sun, 18 Dec 2022 02:55:43 +0100
+Source: sensehat-christmas-build-deps
+Binary: sensehat-christmas-build-deps
+Architecture: all
+Version: 1.0
+Distribution: unstable
+Urgency: low
+Maintainer: Equivs Dummy Package Generator <root@chrispi>
+Changed-By: Equivs Dummy Package Generator <root@chrispi>
+Description:
+ sensehat-christmas-build-deps - build-dependencies for sensehat-christmas
+Changes:
+ sensehat-christmas-build-deps (1.0) unstable; urgency=low
+ .
+   * First version
+Checksums-Sha1:
+ f53de4b9c522ea6962bf03b761bf4892559d0d57 2172 sensehat-christmas-build-deps_1.0_all.deb
+ 936486f50971824c0f0e11d1e30172e9623ff046 4925 sensehat-christmas-build-deps_1.0_arm64.buildinfo
+Checksums-Sha256:
+ ddeaf608d372c9cbab97cc22927287c86fb58497e0bf6816146974db741eddb4 2172 sensehat-christmas-build-deps_1.0_all.deb
+ a75da6f24afd9793cf2df761fbf5fcd9cdf9b18d718bcde8cd2977186c7fc73d 4925 sensehat-christmas-build-deps_1.0_arm64.buildinfo
+Files:
+ 699e35018124dbf7d53d7a414cfb958a 2172 devel optional sensehat-christmas-build-deps_1.0_all.deb
+ 8e989b2f2f3597e0bc6616b972d55e28 4925 devel optional sensehat-christmas-build-deps_1.0_arm64.buildinfo

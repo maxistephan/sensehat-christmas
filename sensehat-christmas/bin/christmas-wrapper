@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sensehat-christmas --rotation=180 --snowflakes=6 --low-light-mode
