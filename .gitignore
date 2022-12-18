@@ -165,6 +165,7 @@ cython_debug/
 *.deb
 *.substvars
 *.debhelper
+equivs*
 
 debian/files
 debian/debhelper-build-stamp
