@@ -5,9 +5,26 @@ set -e
 BASEDIR=$(pwd)
 
 function show_help() {
-    echo "Wrapper Script for Sensehat Christmas"
+    echo "Wrapper Script for christmaspi"
     echo ""
-    echo "Usage: $0 (--build-dep|--install|-h|--help)"
+    echo "Usage: $0 ([--docker] --build-deb|--install-pip|-h|--help)"
+    echo ""
+    echo "Arguments:"
+    echo "----------"
+    echo ""
+    echo "   --build-deb        Build the Debian Packages"
+    echo "   --install-pip      Install the python3-pip package inside a virtual environment only"
+    echo "   --docker           Flag to build in a docker container"
+    echo "-h|--help             Show this help text"
+    echo ""
+    echo "Examples:"
+    echo "---------"
+    echo ""
+    echo "# Build the debian package using the docker container"
+    echo " > $0 --docker --build deb"
+    echo ""
+    echo "# Install the python3-pip Package inside a virtual environment ($pwd/.venv)"
+    echo " > $0 --install-pip"
 }
 
 function build_deb() {
@@ -41,37 +58,60 @@ function setup_venv() {
 }
 
 function install_pip() {
-    echo "Installing sensehat-christmas as Pip Package"
+    echo "Installing christmaspi as Pip Package"
 
     cd "${BASEDIR}"
     pip3 install . --ignore-installed
 }
 
-while :
-do
+DOCKER_CMD=""
+
+while [ $# -gt 0 ] ;do
     case "$1" in
-    --build-deb)
+        --build-deb)
+            BUILD_DEB="1"
+            shift
+            ;;
+        --install-pip)
+            INSTALL_PIP="1"
+            shift
+            ;;
+        --docker)
+            DOCKER_CMD="1"
+            shift
+            ;;
+        -h|--help)
+            show_help
+            exit 0
+            ;;
+        *)
+            if [ -z "$1" ]; then
+                echo "No Argument given."
+            else
+                echo "Unknown Argument \"$1\"."
+            fi
+            echo "Use \"$0 --help\" to get helping text."
+            exit 1
+            ;;
+    esac
+done
+
+if [ -n "${BUILD_DEB}" ]; then
+    if [ -z "${DOCKER_CMD}" ]; then
         build_deb
-        exit 0
-        ;;
-    --install)
+    else
+        cd docker
+        GROUP_NAME=$(id -n -g) USER_ID=$(id -u) GROUP_ID=$(id -g) \
+            docker compose run christmaspi-env ./run.sh --build-deb
+    fi
+fi
+
+if [ -n "$INSTALL_PIP" ]; then
+    if [ -z "${DOCKER_CMD}" ]; then
         setup_venv
         install_pip
-        exit 0
-        ;;
-    -h|--help)
-        show_help
-        exit 0
-        ;;
-    *)
-        if [ -z "$1" ]; then
-            echo "No Argument given."
-        else
-            echo "Unknown Argument \"$1\"."
-        fi
-        echo "Use \"$0 --help\" to get helping text."
+    else
+        echo "Installing the pip package inside a docker container is not recommended!"
         exit 1
-        ;;
-    esac
-    shift
-done
+    fi
+fi

@@ -3,7 +3,7 @@ Description=RPI Sense Hat Christmas Tree Service
 
 [Service]
 Type=simple
-ExecStart=/usr/sbin/christmas-wrapper
+ExecStart=/usr/sbin/christmaspi-wrapper
 RestartSec=5
 Restart=on-failure
 

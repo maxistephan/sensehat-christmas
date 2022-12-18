@@ -17,17 +17,22 @@ if TARGET_DEV is None:
         tags = subprocess.check_output("git rev-list --tags --max-count=1", shell=True).strip().decode()
         last_tag = subprocess.check_output("git describe --tags --abbrev=0", shell=True).strip().decode()
 
-        _version = last_tag if last_commit == commit_of_last_tag else "0.0.0"
+        if last_commit == commit_of_last_tag:
+            _version = last_tag
+        else:
+            _version = f"0.0.0+{last_commit}"
     except:
         print("Error: Version could not be generated")
+        _version = "0.0.0"
         raise
 else:
     _version = "0.0.0"
 
 setup(
-    name="sensehat-christmas",
+    name="christmaspi",
     version=_version,
     description="RPI Sense Hat Display of a Christmas Tree with Snowflakes",
     install_requires=install_requires,
-    entry_points={"console_scripts": ["sensehat-christmas = sensehat_christmas.bin.christmas:main"]},
+    packages=find_packages(exclude=["test", "test.*"]),
+    entry_points={"console_scripts": ["christmaspi = christmaspi.bin.daemon:main"]},
 )

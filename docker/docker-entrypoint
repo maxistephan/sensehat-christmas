@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+test -z $USER_NAME && USER_NAME=$(id -n -u)
+test -z $USER_ID && USER_ID=$(id -u)
+test -z $GROUP_ID && GROUP_ID=$(id -g)
+test -z $GROUP_NAME && GROUP_ID=$(id -n -g)
+
+echo "USER: $USER_NAME (${USER_ID}) ; GROUP: $GROUP_NAME (${GROUP_ID})"
+
+exec "$@"

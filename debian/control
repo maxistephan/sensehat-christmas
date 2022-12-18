@@ -1,21 +1,27 @@
-Source: sensehat-christmas
-Section: misc
+Source: christmaspi
+Section: python
 Priority: optional
 Maintainer: Maximilian Stephan <stephan.maxi@icloud.com>
-Build-Depends: debhelper-compat (= 13), dh-python, python3-setuptools, python3-all, python3-pip
+Build-Depends: debhelper-compat (= 13),
+  dh-python,
+  python3-setuptools,
+  python3-all
 Standards-Version: 4.5.1
 Rules-Requires-Root: no
 
-Package: python3-sensehat-christmas
+Package: python3-christmaspi
 Architecture: all
-Depends: ${python3:Depends}, ${misc:Depends}
-Suggests: python-sensehat-christmas-doc
+Depends: ${python3:Depends},
+  ${misc:Depends},
+  python3-click,
+  python3-sense-hat
+Suggests: python-christmaspi-doc
 Description: <insert up to 60 chars description> (Python 3)
  <insert long description, indented with spaces>
  .
  This package installs the library for Python 3.
 
-Package: python-sensehat-christmas-doc
+Package: python-christmaspi-doc
 Architecture: all
 Section: doc
 Depends: ${sphinxdoc:Depends}, ${misc:Depends}

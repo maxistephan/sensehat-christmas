@@ -1,4 +1,4 @@
-sensehat-christmas (1.0) bullseye; urgency=medium
+christmaspi (1.0) bullseye; urgency=medium
 
   * Initial Release
   * Python module as systemd service that uses the RaspberryPi Sense Hat to

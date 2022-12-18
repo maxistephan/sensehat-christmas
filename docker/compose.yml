@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+  christmaspi-env:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        HOST_UID: "${USER_ID}"
+        HOST_GID: "${GROUP_ID}"
+        HOST_GN: "${GROUP_NAME}"
+    
+    image: "${IMAGE_NAME:-christmaspi:local}"
+    container_name: "${CONTAINER_NAME:-christmaspi}"
+    privileged: true
+    volumes:
+      - type: bind
+        source: "${PWD}/../"
+        target: "/builder/christmaspi"
