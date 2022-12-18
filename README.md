@@ -73,3 +73,17 @@ virtual environment:
 ```bash
 ./run.sh --install-pip
 ```
+
+## Run
+
+Run the systemd service (only after .deb installation available):
+
+```bash
+sudo systemctl start christmaspi
+```
+
+Run the programm itself:
+
+```bash
+christmaspi
+```
