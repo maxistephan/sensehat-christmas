@@ -2,6 +2,8 @@
 
 RPI Sense Hat Display of a Christmas Tree with Snowflakes.
 
+![Demo GIF](./doc/img/demo.gif)
+
 ## Getting started
 
 There are two ways to install this project:

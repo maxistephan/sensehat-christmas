@@ -11,8 +11,6 @@ Copyright (c) 2022 Maximilian Stephan <stephan.maxi@icloud.com>
 import random
 import time
 
-from christmaspi.christmastree import time_by_depth
-
 
 class SnowFlake:
     """Representation of a single Snowflake on the RPI Sense Hat
@@ -26,7 +24,7 @@ class SnowFlake:
         self.x = x
         self.y = y
         self.depth = random.randint(1, 10)
-        self.time = time_by_depth(self.depth)
+        self.time = SnowFlake._time_by_depth(self.depth)
         self.last_time = time.time()
 
     def move(self, controller):
@@ -50,3 +48,13 @@ class SnowFlake:
 
             if controller.tree_depth_at([self.x, self.y]) > self.depth:
                 controller.draw([self.x, self.y], [255, 255, 255])
+
+    @staticmethod
+    def _time_by_depth(depth: int) -> float:
+        """Return a time between 0.1 and 1 seconds based off of the depth.
+
+        A Depth of 10 is far away, so the time between updates is longer.
+        This results in 10 being 1 second, 5 being 0.5 seconds and 1 being 0.1 seconds, and so on.
+        """
+        assert 0 < depth and depth <= 10
+        return depth / 10
