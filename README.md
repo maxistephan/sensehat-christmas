@@ -20,6 +20,7 @@ sudo apt-get install --no-install-recommends \
     gcc make \
     dpkg-dev devscripts equivs \
     libcap2-bin apt-utils \
+    git-core
 ```
 
 Use the *run.sh* script to build the package.
@@ -41,6 +42,10 @@ instead:
 ```bash
 ./run.sh --docker --build-deb
 ```
+
+**note:** This script uses the newer
+[*docker-compose-plugin*](https://docs.docker.com/compose/install/linux/).
+If you are still using docker-compose consider updating!
 
 ### Debian Installation
 
