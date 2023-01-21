@@ -41,7 +41,7 @@ class SnowFlake:
             if self.y > 7:
                 controller.available_indices.append(self.x)
                 self.depth = random.randint(1, 10)
-                self.time = time_by_depth(self.depth)
+                self.time = SnowFlake._time_by_depth(self.depth)
                 self.y = 0
                 self.x = random.choice(controller.available_indices)
                 controller.available_indices.remove(self.x)

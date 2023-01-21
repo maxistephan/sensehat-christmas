@@ -2,13 +2,13 @@
 
 export DH_VERBOSE=1
 
-export PYBUILD_NAME=christmaspi
+export PYBUILD_NAME=rpi-season-screen
 
 %:
 	dh $@ --with python3 --buildsystem=pybuild
 
 override_dh_installinit:
-	dh_installinit --name=christmaspi
+	dh_installinit --name=rpi-season-screen
 
 override_dh_installsystemd:
-	dh_installsystemd --name=christmaspi
+	dh_installsystemd --name=rpi-season-screen

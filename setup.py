@@ -29,10 +29,10 @@ else:
     _version = "0.0.0"
 
 setup(
-    name="christmaspi",
+    name="rpi-season-screen",
     version=_version,
-    description="RPI Sense Hat Display of a Christmas Tree with Snowflakes",
+    description="RPI Sense Hat Display",
     install_requires=install_requires,
     packages=find_packages(exclude=["test", "test.*"]),
-    entry_points={"console_scripts": ["christmaspi = christmaspi.bin.daemon:main"]},
+    entry_points={"console_scripts": ["rpi-season-screen = rpi_season_screen.bin.daemon:main"]},
 )

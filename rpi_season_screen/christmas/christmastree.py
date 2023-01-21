@@ -25,13 +25,3 @@ TREE = [
 
 
 TREE_DPT = 7
-
-
-def time_by_depth(depth: int) -> float:
-    """Return a time between 0.1 and 1 seconds based off of the depth.
-
-    A Depth of 10 is far away, so the time between updates is longer.
-    This results in 10 being 1 second, 5 being 0.5 seconds and 1 being 0.1 seconds, and so on.
-    """
-    assert 0 < depth and depth <= 10
-    return depth / 10

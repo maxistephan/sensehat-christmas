@@ -1,7 +1,7 @@
-christmaspi (1.0) bullseye; urgency=medium
+rpi-season-screen (1.0) bullseye; urgency=medium
 
   * Initial Release
   * Python module as systemd service that uses the RaspberryPi Sense Hat to
-    display a Christmas Tree and snow raining from the top.
+    display a season specific screens.
 
  -- Maximilian Stephan <stephan.maxi@icloud.com>  Sun, 18 Dec 2022 01:17:29 +0100

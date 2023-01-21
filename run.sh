@@ -5,7 +5,7 @@ set -e
 BASEDIR=$(pwd)
 
 function show_help() {
-    echo "Wrapper Script for christmaspi"
+    echo "Wrapper Script for rpi-season-screen"
     echo ""
     echo "Usage: $0 ([--docker] --build-deb|--install-pip|-h|--help)"
     echo ""
@@ -58,7 +58,7 @@ function setup_venv() {
 }
 
 function install_pip() {
-    echo "Installing christmaspi as Pip Package"
+    echo "Installing Raspberry Pi Season Screen as Pip Package"
 
     cd "${BASEDIR}"
     pip3 install . --ignore-installed
@@ -102,7 +102,7 @@ if [ -n "${BUILD_DEB}" ]; then
     else
         cd docker
         GROUP_NAME=$(id -n -g) USER_ID=$(id -u) GROUP_ID=$(id -g) \
-            docker compose run christmaspi-env ./run.sh --build-deb
+            docker compose run rpi-season-screen-env ./run.sh --build-deb
     fi
 fi
 

@@ -9,8 +9,8 @@ import time
 
 from sense_hat import SenseHat
 
-from christmaspi.christmastree import R, G, B, W, O, b, Y, TREE, TREE_DPT
-from christmaspi.snowflake import SnowFlake
+from rpi_season_screen.christmas.christmastree import R, G, B, W, O, b, Y, TREE, TREE_DPT
+from rpi_season_screen.christmas.snowflake import SnowFlake
 
 
 class SenseController:

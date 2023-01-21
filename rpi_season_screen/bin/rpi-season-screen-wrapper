@@ -5,4 +5,5 @@
 # Copyright (c) 2022 Maximilian Stephan <stephan.maxi@icloud.com>
 #
 
-christmaspi --rotation=180 --snowflakes=6 --low-light-mode
+rpi-season-screen --rotation=180 --low-light-mode christmas \
+    --snowflakes=6

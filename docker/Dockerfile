@@ -28,13 +28,13 @@ COPY docker-entrypoint /
 RUN mkdir /builder
 
 RUN groupadd --force --gid $HOST_GID $HOST_GN
-RUN useradd -rm -d /builder/christmaspi -s /bin/bash -g root -G sudo,$HOST_GN -u $HOST_UID -g $HOST_GID $HOST_GN
+RUN useradd -rm -d /builder/rpi-season-screen -s /bin/bash -g root -G sudo,$HOST_GN -u $HOST_UID -g $HOST_GID $HOST_GN
 
-RUN echo "$HOST_GN ALL=NOPASSWD: ALL" > /etc/sudoers.d/christmaspi-nopasswd && \
-    chmod 660 /etc/sudoers.d/christmaspi-nopasswd
+RUN echo "$HOST_GN ALL=NOPASSWD: ALL" > /etc/sudoers.d/rpi-season-screen-nopasswd && \
+    chmod 660 /etc/sudoers.d/rpi-season-screen-nopasswd
 
 USER $HOST_GN
 
-WORKDIR /builder/christmaspi
+WORKDIR /builder/rpi-season-screen
 
 ENTRYPOINT ["/docker-entrypoint"]

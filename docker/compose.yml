@@ -1,7 +1,7 @@
 version: "3.3"
 
 services:
-  christmaspi-env:
+  rpi-season-screen-env:
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,10 +10,10 @@ services:
         HOST_GID: "${GROUP_ID}"
         HOST_GN: "${GROUP_NAME}"
     
-    image: "${IMAGE_NAME:-christmaspi:local}"
-    container_name: "${CONTAINER_NAME:-christmaspi}"
+    image: "${IMAGE_NAME:-rpi-season-screen:local}"
+    container_name: "${CONTAINER_NAME:-rpi-season-screen}"
     privileged: true
     volumes:
       - type: bind
         source: "${PWD}/../"
-        target: "/builder/christmaspi"
+        target: "/builder/rpi-season-screen"

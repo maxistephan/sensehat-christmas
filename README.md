@@ -1,6 +1,8 @@
-# christmaspi
+# Raspberry Pi Season Screen
 
-RPI Sense Hat Display of a Christmas Tree with Snowflakes.
+RPI Sense Hat Display with different scenes in different times of the year.
+
+An example of said scenes is the christmas tree during the winter holidays:
 
 ![Demo GIF](./doc/img/demo.gif)
 
@@ -33,8 +35,8 @@ Use the *run.sh* script to build the package.
 
 This will output two *.deb* files:
 
-* *python3-christmaspi_<VERSION>_all.deb* - christmaspi Package
-* *python-christmaspi-doc_<VERSION>_all.deb* - Documentation Package
+* *python3-rpi-season-screen<VERSION>_all.deb* - rpi-season-screen Package
+* *python-rpi-season-screen-doc_<VERSION>_all.deb* - Documentation Package
 
 **Alternative:** [Docker](https://docs.docker.com/engine/install/debian/)
 
@@ -55,14 +57,14 @@ Installing the packages is then done by using `apt install <PACKAGE>`:
 
 ```bash
 # Install the package
-sudo apt install ./python3-christmaspi_<VERSION>_all.deb
+sudo apt install ./python3-rpi-season-screen<VERSION>_all.deb
 
 # OPTIONAL: Install docs
-sudo apt install ./python-christmaspi-doc_<VERSION>_all.deb
+sudo apt install ./python-rpi-season-screen-doc_<VERSION>_all.deb
 ```
 
 Packages can be obtained at the
-[Releases Page](https://github.com/maxistephan/sensehat-christmas/releases/new) or build
+[Releases Page](https://github.com/maxistephan/rpi-season-screen/releases) or build
 them from source as described above.
 
 ### Pip installation
@@ -82,11 +84,11 @@ virtual environment:
 Run the systemd service (only after .deb installation available):
 
 ```bash
-sudo systemctl start christmaspi
+sudo systemctl start rpi-season-screen
 ```
 
 Run the programm itself:
 
 ```bash
-christmaspi
+rpi-season-screen
 ```

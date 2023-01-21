@@ -1,9 +1,9 @@
 [Unit]
-Description=RPI Sense Hat Christmas Tree Service
+Description=RPI Season Screen Service
 
 [Service]
 Type=simple
-ExecStart=/usr/sbin/christmaspi-wrapper
+ExecStart=/usr/sbin/rpi-season-screen-wrapper
 RestartSec=5
 Restart=on-failure
 
