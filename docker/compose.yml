@@ -13,6 +13,7 @@ services:
     image: "${IMAGE_NAME:-rpi-season-screen:local}"
     container_name: "${CONTAINER_NAME:-rpi-season-screen}"
     privileged: true
+    network_mode: host
     volumes:
       - type: bind
         source: "${PWD}/../"

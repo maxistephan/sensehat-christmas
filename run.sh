@@ -102,7 +102,7 @@ if [ -n "${BUILD_DEB}" ]; then
     else
         cd docker
         GROUP_NAME=$(id -n -g) USER_ID=$(id -u) GROUP_ID=$(id -g) \
-            docker compose run rpi-season-screen-env ./run.sh --build-deb
+            docker compose run --rm rpi-season-screen-env ./run.sh --build-deb
     fi
 fi
 
