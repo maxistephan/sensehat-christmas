@@ -12,12 +12,12 @@ Rules-Requires-Root: no
 Package: python3-rpi-season-screen
 Architecture: all
 Depends: ${python3:Depends},
-  ${misc:Depends},
-  python3-click,
-  python3-sense-hat
+  ${misc:Depends}
 Suggests: python-rpi-season-screen-doc
-Description: <insert up to 60 chars description> (Python 3)
- <insert long description, indented with spaces>
+Description: RaspberryPi Sense Hat implementation to show gifs and videos (Python 3)
+ This package is using a systemd startup service to show the desired contents on the Sense Hat reliably.
+ A Cron job set up at midnight that restarts the service will ensure that the correct content is displayed.
+ A Raspberry Pi Sense Hat is needed in order for this project to work!
  .
  This package installs the library for Python 3.
 
@@ -25,7 +25,7 @@ Package: python-rpi-season-screen-doc
 Architecture: all
 Section: doc
 Depends: ${sphinxdoc:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description> (common documentation)
- <insert long description, indented with spaces>
+Description: Doc package for python3-rpi-season-screen (common documentation)
+ This package installs the documentation for python3-rpi-season-screen.
  .
  This is the common documentation package.

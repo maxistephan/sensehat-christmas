@@ -8,17 +8,19 @@ Display has a total of 8x8 pixels.
 Copyright (c) 2022 Maximilian Stephan <stephan.maxi@icloud.com>
 """
 
+from datetime import datetime
+from signal import signal, SIGTERM, SIGINT
+
 import click
 
-from datetime import datetime
 from sense_hat import SenseHat
-from signal import signal, SIGTERM, SIGINT
 
 from rpi_season_screen.christmas.christmas_controller import ChristmasController
 from rpi_season_screen.new_year.new_year_controller import NewYearController
 from rpi_season_screen.easter.easter_controller import EasterController
 from rpi_season_screen.sense.sense_controller import SenseController
 from rpi_season_screen.fill.fill_controller import FillController
+from rpi_season_screen.video.video_controller import VideoController
 
 
 def start_scene(controller: SenseController):
@@ -27,7 +29,6 @@ def start_scene(controller: SenseController):
     signal(SIGINT, controller.handle_signal)
     controller.init_scene()
     controller.start_scene()
-
 
 
 @click.group()
@@ -87,6 +88,7 @@ def start_new_year(ctx):
     )
     start_scene(controller)
 
+
 @main.command(name="easter")
 @click.pass_context
 def start_easter(ctx):
@@ -109,6 +111,20 @@ def start_fill(ctx):
         sense, rotation=rotation, low_light_mode=low_light_mode
     )
     start_scene(controller)
+
+
+@main.command(name="video")
+@click.option("--video-path", "-f", type=str, help="Path to the video source.")
+@click.pass_context
+def start_video(ctx, video_path):
+    rotation = ctx.obj["rotation"]
+    low_light_mode = ctx.obj["low_light_mode"]
+    sense = SenseHat()
+    controller = VideoController(
+        video_path, sense, rotation=rotation, low_light_mode=low_light_mode
+    )
+    start_scene(controller)
+
 
 if __name__ == '__main__':
     main()

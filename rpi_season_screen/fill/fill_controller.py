@@ -39,3 +39,5 @@ class FillController(SenseController):
         self.last_time = time.time()
         self.sense.set_pixels(self.frames[f"{self.current_frame}"])
         self.current_frame += 1
+        if self.current_frame >= len(self.frames):
+            self.current_frame = 0

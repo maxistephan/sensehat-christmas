@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 
-import subprocess
-from setuptools import setup, find_packages
 import os
+import subprocess
+
+from setuptools import setup, find_packages
 
 TARGET_DEV = os.getenv("TARGET_DEV")
 
 install_requires = []
-with open("requirements.txt") as requirements:
+with open("requirements.txt", "r", encoding="utf-8") as requirements:
     install_requires=requirements.read().splitlines()
 
 if TARGET_DEV is None:

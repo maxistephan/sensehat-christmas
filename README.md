@@ -15,7 +15,10 @@ There are two ways to install this project:
 
 ### Debian Build
 
-**note:** Building the package from source requires you to have the following debian packages
+**note:** Usually you don't have to build the package yourself.
+In that case, just check out the [Debian Installation Section](#debian-installation)!
+
+**important:** Building the package from source requires you to have the following debian packages
 installed:
 
 ```bash
@@ -53,23 +56,25 @@ If you are still using docker-compose consider updating!
 
 ### Debian Installation
 
+First things first, head to the
+[release page](https://github.com/maxistephan/rpi-season-screen/releases/latest)
+and download the desired debian packages.
+The Python module is *python3-rpi-season-screen_\*_all.deb* and the documentation
+*python-rpi-season-screen-doc_\*_all.deb*.
+
 Installing the packages is then done by using `apt install <PACKAGE>`:
 
 ```bash
 # Install the package
 sudo apt install ./python3-rpi-season-screen<VERSION>_all.deb
 
-# OPTIONAL: Install docs
+# OPTIONAL: Install docs (currently an empty package, so don't bother)
 sudo apt install ./python-rpi-season-screen-doc_<VERSION>_all.deb
 
 # OPTIONAL: Setup cron schedule
 sudo crontab -e
 # Enter: 0 0 * * * systemctl restart rpi-season-screen
 ```
-
-Packages can be obtained at the
-[Releases Page](https://github.com/maxistephan/rpi-season-screen/releases) or build
-them from source as described above.
 
 ### Pip installation
 
@@ -85,7 +90,8 @@ virtual environment:
 
 ## Run
 
-Run the systemd service (only after .deb installation available):
+Run the systemd service (only after .deb installation available).
+**note:** Usually the service already runs after installation.
 
 ```bash
 sudo systemctl start rpi-season-screen
@@ -94,5 +100,13 @@ sudo systemctl start rpi-season-screen
 Run the programm itself:
 
 ```bash
-rpi-season-screen
+rpi-season-screen --help
+```
+
+Example:
+
+Displaying a video at ~/Videos/my_video.mp4
+
+```bash
+rpi-season-screen video -f ~/Videos/my_video.mp4
 ```
