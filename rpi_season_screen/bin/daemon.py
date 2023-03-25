@@ -8,6 +8,7 @@ Display has a total of 8x8 pixels.
 Copyright (c) 2022 Maximilian Stephan <stephan.maxi@icloud.com>
 """
 
+import os
 from datetime import datetime
 from signal import signal, SIGTERM, SIGINT
 
@@ -57,9 +58,19 @@ def start_automatically(ctx):
         controller = NewYearController(
             sense, rotation=rotation, low_light_mode=low_light_mode
         )
+    if current_month == 4:
+        controller = EasterController(
+            sense, rotation=rotation, low_light_mode=low_light_mode
+        )
     elif current_month == 12:
         controller = ChristmasController(
             sense, rotation=rotation, low_light_mode=low_light_mode
+        )
+
+    fill_vid_source = os.getenv("FILL_VIDEO_SOURCE")
+    if isinstance(controller, FillController) and fill_vid_source:
+        controller = VideoController(
+            fill_vid_source, sense, rotation=rotation, low_light_mode=low_light_mode
         )
     start_scene(controller)
 

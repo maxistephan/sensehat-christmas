@@ -2,6 +2,7 @@
 Description=RPI Season Screen Service
 
 [Service]
+EnvironmentFile=-/etc/default/rpi-season-screen
 Type=simple
 ExecStart=/usr/sbin/rpi-season-screen-wrapper
 RestartSec=5

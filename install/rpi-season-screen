@@ -1,0 +1,4 @@
+# CONFIGURATION FILE FOR RPI-SEASON-SCREEN
+
+# Video source (filepath) for filler controllers
+FILL_VIDEO_SOURCE=""

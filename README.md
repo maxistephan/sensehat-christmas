@@ -110,3 +110,6 @@ Displaying a video at ~/Videos/my_video.mp4
 ```bash
 rpi-season-screen video -f ~/Videos/my_video.mp4
 ```
+
+If you want to run your own video in between events, you can modify
+*/etc/default/rpi-season-screen* and insert the path to your own video.

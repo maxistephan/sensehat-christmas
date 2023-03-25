@@ -2,6 +2,8 @@ rpi-season-screen (1.2.1) bullseye; urgency=high
 
   * Refactoring: Fixed frame bug in filler and fixed dependency chain.
   * Added compatibility for video sources
+  * Added Easter Video Controller
+  * Added environment file
 
  -- Maximilian Stephan <stephan.maxi@icloud.com>  Sat, 25 Mar 2023 11:29:50 +0100
 
