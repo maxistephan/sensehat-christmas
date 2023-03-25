@@ -61,6 +61,10 @@ sudo apt install ./python3-rpi-season-screen<VERSION>_all.deb
 
 # OPTIONAL: Install docs
 sudo apt install ./python-rpi-season-screen-doc_<VERSION>_all.deb
+
+# OPTIONAL: Setup cron schedule
+sudo crontab -e
+# Enter: 0 0 * * * systemctl restart rpi-season-screen
 ```
 
 Packages can be obtained at the

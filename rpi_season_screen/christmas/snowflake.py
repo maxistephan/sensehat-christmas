@@ -12,9 +12,10 @@ import random
 import time
 
 
+
 class SnowFlake:
     """Representation of a single Snowflake on the RPI Sense Hat
-    
+
     # Arguments
 
     * `x` - x position of the Snowflake
@@ -32,7 +33,7 @@ class SnowFlake:
 
         # Arguments
 
-        * `controller` - SenseController Object the move shall be performed on
+        * `controller` - ChristmasController Object the move shall be performed on
         """
         if self.last_time + self.time <= time.time():
             self.last_time = time.time()
@@ -47,7 +48,7 @@ class SnowFlake:
                 controller.available_indices.remove(self.x)
 
             if controller.tree_depth_at([self.x, self.y]) > self.depth:
-                controller.draw([self.x, self.y], [255, 255, 255])
+                controller.draw((self.x, self.y), [255, 255, 255])
 
     @staticmethod
     def _time_by_depth(depth: int) -> float:

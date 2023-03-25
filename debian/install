@@ -1,2 +1,2 @@
 rpi_season_screen/bin/rpi-season-screen-wrapper /usr/sbin/
-
+rpi_season_screen/fill/bad_apple.json /etc/rpi-season-screen/
