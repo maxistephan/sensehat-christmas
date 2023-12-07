@@ -113,3 +113,16 @@ rpi-season-screen video -f ~/Videos/my_video.mp4
 
 If you want to run your own video in between events, you can modify
 */etc/default/rpi-season-screen* and insert the path to your own video.
+
+## Troubleshooting
+
+If (for any reason) there are dependency problems, try installing these packages:
+
+```bash
+sudo apt install \
+    python3-opencv \
+    python3-sense-hat
+```
+
+and enable the `I2C` interface in the `raspi-config`.
+
