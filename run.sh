@@ -2,7 +2,7 @@
 
 set -e
 
-BASEDIR=$(pwd)
+BASEDIR=$(dirname $(readlink -e -- $0))
 
 function show_help() {
     echo "Wrapper Script for rpi-season-screen"
